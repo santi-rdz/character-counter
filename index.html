@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Character counter</title>
+  </head>
+  <body class="">
+    <header class="main-header">
+      <div class="container flex items-center justify-between">
+        <img
+          class="logo logo-dark-theme"
+          src="assets/images/logo-dark-theme.svg"
+          alt=""
+        />
+        <img
+          class="logo hidden logo-light-theme"
+          src="assets/images/logo-light-theme.svg"
+          alt=""
+        />
+
+        <button class="btn btn-theme">
+          <img
+            class="theme-icon icon-sun"
+            src="assets/images/icon-sun.svg"
+            alt=""
+          />
+          <img
+            class="theme-icon icon-moon hidden"
+            src="assets/images/icon-moon.svg"
+            alt=""
+          />
+        </button>
+      </div>
+    </header>
+    <main>
+      <section class="analyzer-intro container">
+        <h1 class="txt-1 analyzer-heading bold">
+          Analyze your text in real-time.
+        </h1>
+      </section>
+      <section class="analyzer-input container">
+        <form class="form">
+          <textarea
+            class="analyzer-textarea txt-3"
+            name="text-input"
+            placeholder="Start typing here… (or paste your text)"
+          ></textarea>
+
+          <footer class="analyzer-options flex items-center justify-between">
+            <ul class="options-list flex">
+              <li class="option spaces">
+                <input
+                  id="option-spaces"
+                  type="checkbox"
+                  class="checkbox"
+                  name="exclude-spaces"
+                />
+                <label for="option-spaces" class="txt-4 regular"
+                  >Exclude Spaces</label
+                >
+              </li>
+              <li class="option char-limit">
+                <input
+                  id="option-charlimit"
+                  type="checkbox"
+                  class="checkbox"
+                  name="char-limit"
+                />
+                <label for="option-charlimit" class="txt-4 regular"
+                  >Set Character Limit</label
+                >
+                <input
+                  type="number"
+                  class="input-limit invisible"
+                  name="input-limit"
+                  value="300"
+                />
+              </li>
+              <li class="reading">
+                <span class="reading-time txt-4 regular"
+                  >Approx. reading time:
+                  <span class="time">0</span> minute</span
+                >
+              </li>
+            </ul>
+          </footer>
+        </form>
+      </section>
+
+      <section class="analyzer-stats container">
+        <ul class="stats-list">
+          <li class="stat stat-characters">
+            <h2 class="txt-1 bold char-count">00</h2>
+            <p class="txt-3 regular">Total characters</p>
+          </li>
+          <li class="stat stat-words">
+            <h2 class="txt-1 bold word-count">00</h2>
+            <p class="txt-3 regular">Word Count</p>
+          </li>
+          <li class="stat stat-sentence">
+            <h2 class="txt-1 bold sent-count">00</h2>
+            <p class="txt-3 regular">Sentence Count</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="analyzer-density container">
+        <h3 class="txt-2 semi-bold">Letter Density</h3>
+        <div class="density-values txt-4 regular">
+          <span class="txt-4 regular no-values"
+            >No characters found. Start typing to see letter density.</span
+          >
+        </div>
+      </section>
+    </main>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
